@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <header class="game-control">
+        <div>GAME CONTROL</div>
+        <select id="gameLevel-cb" name="gameLevels" select>
+            <option value="empty" selected></option>
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="difficult">Difficult</option>
+        </select>
+
+        <button id="new-game-btn" type="button" disabled>Create new game</button>
+        <button id="save-game-btn" type="button" disabled>Save game</button>
+        <button id="load-saved-btn" type="button">Load saved game</button>
+    </header>
+    <section id="game-board-section">
+        <table class="game-board">
+        </table>
+    </section>
+    
+        <button type="button" class="collapsible">Nyilatkozat</button>
+        <div class="content">
+            <p>Név: Horváth József</p>
+            <p>Neptun Kód: KHAJEZ</p>
+            <p>WEBPROGRAMOZÁS, JavaScript beadandó: Küldöncök</p>
+            <p>2019. November 10.</p>
+            <p>Ezt a megoldást Horváth József, KHAJEZ küldte be és készítette a WEBPROGRAMOZÁS kurzus Küldöncökfeladatához.
+                 Kijelentem, hogy ez a megoldás a saját munkám.
+                Nem másoltam vagy használtam harmadik féltől származó megoldásokat.
+                Nem továbbítottam megoldást hallgatótársaimnak, és nem is tettem közzé.
+Az Eötvös Loránd Tudományegyetem Hallgatói Követelményrendszere (ELTE szervezeti és működési szabályzata, II. Kötet, 74/C. §) kimondja, 
+hogy mindaddig, amíg egy hallgató egy másik hallgató munkáját - vagy legalábbis annak jelentős részét - saját munkájaként mutatja be, 
+az fegyelmi vétségnek számít. A fegyelmi vétség legsúlyosabb következménye a hallgató elbocsátása az egyetemről.</p>
+        </div>
+    
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+    </script>
+    <script src="./main.js" type="module"></script>
+
+</body>
+</html>
